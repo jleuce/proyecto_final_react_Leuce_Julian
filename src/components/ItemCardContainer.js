@@ -10,21 +10,22 @@ function ItemCardContainer({Item}) {
 
   const agregarAlCarrito = () => {
     addItemToCart(Item,cantidadSeleccionada);
-};
+    setCantidadSeleccionada(0);
+  };
 
-const sumar = () => {
+  const sumar = () => {
     if (cantidadSeleccionada < Item.stock){
         console.log("sumar 1");
         setCantidadSeleccionada(cantidadSeleccionada + 1);
     }
-};
+  };
 
-const restar = () => {
+  const restar = () => {
     if (cantidadSeleccionada > 0){
         console.log("restar 1");
         setCantidadSeleccionada(cantidadSeleccionada - 1);
     }
-};
+  };
 
   return (
     <div>

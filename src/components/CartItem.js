@@ -1,9 +1,9 @@
 import React from 'react'
 
-function CartItem({ItemCant}) {
+function CartItem({ItemCant,quitItemFromCartHandler}) {
     
     const quitarProducto =  () => {
-
+      quitItemFromCartHandler(ItemCant.id)
     };
 
   return (
