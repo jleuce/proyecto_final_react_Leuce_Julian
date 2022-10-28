@@ -1,23 +1,31 @@
-import { useState } from 'react';
 import './App.css';
-import Cart from './components/Cart';
+import CheckOut from './components/CheckOut';
 import ItemListContainer from './components/ItemListContainer';
-import CartWidgetContext from './context/CartWidgetContext';
+import NavBar from './components/NavBar';
 import { CartWidgetContextProvider } from './context/CartWidgetContext'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { UserContextProvider } from './context/UserContext';
+import User from './components/User';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   
   return (
+    <UserContextProvider>
     <CartWidgetContextProvider>
       <>
-        <div>
-          <Cart></Cart>
-        </div>
-        <div>
-          <ItemListContainer></ItemListContainer>
-        </div>
+        <BrowserRouter>
+          <NavBar></NavBar>
+          <Routes>
+            <Route path={'/'} element={<ItemListContainer></ItemListContainer>}></Route>
+            <Route path={'/pedidos'} element={<CheckOut></CheckOut>}></Route>
+            <Route path={'/login'} element={<User></User>}></Route>
+            <Route path={'/productos/:nombre'} element={<ItemDetailContainer></ItemDetailContainer>}></Route>
+          </Routes>
+        </BrowserRouter>
       </>
     </CartWidgetContextProvider>
+    </UserContextProvider>
   );
 }
 

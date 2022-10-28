@@ -1,16 +1,21 @@
 import React, { useContext, useState } from 'react'
 import CartWidgetContext from '../context/CartWidgetContext';
+import UserContext from '../context/UserContext';
 import ItemCard from './ItemCard'
 
 function ItemCardContainer({Item}) {
 
-  const {cart,addItemToCart,quitItemFromCart,} = useContext(CartWidgetContext);
-  
+  const {addItemToCart} = useContext(CartWidgetContext);
+  const {user} = useContext(UserContext);
   const [cantidadSeleccionada, setCantidadSeleccionada] = useState(0) 
 
   const agregarAlCarrito = () => {
-    addItemToCart(Item,cantidadSeleccionada);
-    setCantidadSeleccionada(0);
+    if(user == null){
+      alert("Para agregar al carrito debes loguearte")
+    }else{
+      addItemToCart(Item,cantidadSeleccionada);
+      setCantidadSeleccionada(0);
+    }
   };
 
   const sumar = () => {

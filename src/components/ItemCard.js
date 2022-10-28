@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ItemCard({Item,cantidadSeleccionada,agregarAlCarritoHandler,sumarHandler,restarHandler}) {
 
   return (
     <div className="Card">
         <div className="card w-96 bg-base-100 shadow-xl">
-            <p>Cartelito si no hay stock</p>            
+            {Item.stock==0?<p>Sin stock</p>:''}          
             <figure className="px-10 pt-10">
                 <img src={Item.imagen} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -21,7 +22,7 @@ function ItemCard({Item,cantidadSeleccionada,agregarAlCarritoHandler,sumarHandle
                     <button className="btn btn-primary" onClick={restarHandler}>-</button>
                 </div>
                 <div className="card-actions">
-                    <button className="btn btn-primary" >Ver detalle</button>
+                    <Link to={`/productos/${Item.producto}`} className="btn btn-primary" >Ver detalle</Link>
                 </div>
             </div>
         </div>
