@@ -32,3 +32,19 @@ code {
 .autobtn{
   width: 20%;
 }
+
+.autonav{
+  width:100%;
+}
+
+.main-img {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-img img {
+  width: 200px;
+  height: 200px;
+}
