@@ -14,7 +14,7 @@ function ItemDetailContainer() {
         traerDatos('Items',setProducto,setLoadingProducto,'producto',nombre)
     }, [])
 
-    if (loadingProducto == true){
+    if (loadingProducto === true){
         return (
             <div>Cargando...</div>
           )  

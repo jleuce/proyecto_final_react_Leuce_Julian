@@ -25,3 +25,10 @@ code {
 .Card {
   flex-basis: 25%;
 }
+
+.autotext{
+  width: 25%;
+}
+.autobtn{
+  width: 20%;
+}

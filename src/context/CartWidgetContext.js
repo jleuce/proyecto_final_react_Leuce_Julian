@@ -44,14 +44,14 @@ export const CartWidgetContextProvider = ({children}) => {
         }else{
             const eCartEditado = cart.find(p=> p.id === item.id);
             eCartEditado.cantidad += cantidad;
-            const newCart = cart.filter(c=> c.id != item.id);
+            const newCart = cart.filter(c=> c.id !== item.id);
             setCart([...newCart,eCartEditado]);
         }  
     };
     
     const quitItemFromCart = (id) => {
         console.log(`Quitando item ${id} del carrito`);
-        const newCart = cart.filter(i => i.id != id);
+        const newCart = cart.filter(i => i.id !== id);
         setCart(newCart);
     };
 

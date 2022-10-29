@@ -6,7 +6,7 @@ function ItemCard({Item,cantidadSeleccionada,agregarAlCarritoHandler,sumarHandle
   return (
     <div className="Card">
         <div className="card w-96 bg-base-100 shadow-xl">
-            {Item.stock==0?<p>Sin stock</p>:''}          
+            {Item.stock === 0?<p>Sin stock</p>:''}          
             <figure className="px-10 pt-10">
                 <img src={Item.imagen} alt="Shoes" className="rounded-xl" />
             </figure>

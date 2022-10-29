@@ -10,13 +10,15 @@ function CheckOut() {
   const [loadingPedidos, setLoadingPedidos] = useState(true);
 
   useEffect(() => {
-    traerDatos('Pedidos',setPedidos,setLoadingPedidos,'usuario',user)
+    if (user !== null) {
+      traerDatos('Pedidos',setPedidos,setLoadingPedidos,'usuario',user)
+    }
   }, [])
 
   console.log(pedidos);
-  if (loadingPedidos== true){
+  if (loadingPedidos === true || user === null){
     return(
-      <div>Cargando...</div>
+      <div>O esta cargando o te tenes que loguear primero...</div>
     )
   }else{
     return (

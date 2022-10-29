@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, updateDoc, where } from 'firebase/firestore'; 
+import { addDoc, collection, doc, getDocs, getFirestore, query, updateDoc, where } from 'firebase/firestore'; 
 
 //Exporto una funcion para que puedan traer datos de firebase, tanto para los pedidos o para los productos
 export  const traerDatos = (coleccion,setHook,setLoading,campoBusqueda,elementoBusqueda) => {
@@ -33,12 +33,12 @@ export  const checkUser = (usuarioInput,contraseñaInput,userHook,userOk) => {
 
                 getDocs(q).then( res => {
                     const data = res.docs.map( e => ({id: e.id, ...e.data()}))
-                    if (data.length != 0){
+                    if (data.length !== 0){
                         console.log("Usuario Existe")
                         const q = query(colRef,where('contraseña','==',contraseñaInput))
                         getDocs(q).then( res => {
                             const data = res.docs.map( e => ({id: e.id, ...e.data()}))
-                            if (data.length != 0){
+                            if (data.length !== 0){
                             console.log("Contraseña Correcta")
                             userHook(usuarioInput);
                             userOk(true);
