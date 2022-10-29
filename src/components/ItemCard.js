@@ -12,9 +12,10 @@ function ItemCard({Item,cantidadSeleccionada,agregarAlCarritoHandler,sumarHandle
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{Item.producto}</h2>
-                <p>{Item.stock}</p>
+                <h3 className="card-title">$ {Item.precio}</h3>
+                <p>Stock disponible: {Item.stock}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary" onClick={agregarAlCarritoHandler}>Agregar al carrito</button>   
+                    <Link to={`/productos/${Item.producto}`} className="btn btn-primary" >Ver detalle</Link>
                 </div>
                 <div>
                     <p type="text">{cantidadSeleccionada}</p>
@@ -22,7 +23,7 @@ function ItemCard({Item,cantidadSeleccionada,agregarAlCarritoHandler,sumarHandle
                     <button className="btn btn-primary" onClick={restarHandler}>-</button>
                 </div>
                 <div className="card-actions">
-                    <Link to={`/productos/${Item.producto}`} className="btn btn-primary" >Ver detalle</Link>
+                    <button className="btn btn-primary" onClick={agregarAlCarritoHandler}>Agregar al carrito</button>   
                 </div>
             </div>
         </div>

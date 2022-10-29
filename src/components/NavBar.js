@@ -16,8 +16,7 @@ function NavBar() {
         <div className="flex-1">
           <a className="btn btn-ghost normal-case text-xl">Ecomerce JL</a>
           <Link to='/' className="btn btn-outline"> Home </Link>
-          <Link to='/pedidos' className='btn btn-outline'> Ver pedidos</Link>
-          <Link to='/favoritos' className='btn btn-outline'> Ver Favoritos</Link>
+          <Link to='/pedidos' className='btn btn-outline'> Ver tus pedidos</Link>
         </div>
         <div className="flex-none">
           <a className="btn btn-ghost normal-case text-xl">Usuario: {user==null?"Invitado":user}</a>

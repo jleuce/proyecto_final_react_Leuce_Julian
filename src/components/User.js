@@ -15,20 +15,27 @@ function User() {
     if (user === null){
         return (
       <>
+      <div className="shadow-xl content-center">
+      <div className="card-body items-center text-center">
       <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-          <label>Usuario</label>
-          <input placeholder="Type here" className="input input-bordered w-full max-w-xs" type="text" {...register("usuario")}/>
+          <label className="text-center" >Usuario</label>
+          <input placeholder="Type here" className="input input-bordered w-full max-w-xs text-center" type="text" {...register("usuario")}/>
       </div>
       <div>
-          <label>Contraseña</label>
-          <input placeholder="Type here" className="input input-bordered w-full max-w-xs" type="text" {...register("contraseña")}/>
+          <label className="text-center">Contraseña</label>
+          <input placeholder="Type here" className="input input-bordered w-full max-w-xs text-center" type="text" {...register("contraseña")}/>
       </div>
       <div>
+      <div className="text-center">
           <input className="btn btn-outline" type="submit" value="Enviar"/>
+          </div>
       </div>
       </form>
+      </div>
+      </div>
       </>
+
         )
       }
       else{

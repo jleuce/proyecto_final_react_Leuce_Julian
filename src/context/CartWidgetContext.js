@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { Card } from "react-daisyui";
 import { updateSomething, writeSomething} from './FunctionsFireBase';
 
 const CartWidgetContext = createContext([]);
@@ -65,6 +64,7 @@ export const CartWidgetContextProvider = ({children}) => {
         enviarPedido (user,cart);
         actualizarStockProductosDB();
         cleanCart();
+        alert("Pedido enviado, podes consultarlo en VER TUS PEDIDOS");
         setRefrescar(!refrescar);
     }
 
